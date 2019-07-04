@@ -15,7 +15,8 @@
     "test": "mocha --compilers js:babel-core/register ./test",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint .",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run snyk-protect; npm run clean && npm run build",
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "babel-template": "^6.7.0",
@@ -23,7 +24,8 @@
     "react-deep-force-update": "^2.0.1",
     "react-proxy": "^3.0.0-alpha.0",
     "redbox-react": "^1.2.5",
-    "source-map": "^0.4.4"
+    "source-map": "^0.4.4",
+    "snyk": "^1.189.0"
   },
   "repository": {
     "type": "git",
@@ -71,5 +73,6 @@
   },
   "engines": {
     "node": ">= 4"
-  }
+  },
+  "snyk": true
 }
